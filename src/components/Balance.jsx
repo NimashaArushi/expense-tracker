@@ -4,7 +4,7 @@ const Balance=()=>{
         <div className="balance-container">
             <div className="balance-main">
                 <h4>Your Balance</h4>
-                <h1>0.00LKR</h1>
+                <h1>0.00 LKR</h1>
 </div>
 
 <div className="income-expense-container">

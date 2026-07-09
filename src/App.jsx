@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './components/Header';
 import Balance from './components/Balance';
+import TransactionForm from './components/TransactionForm';
 import './App.css';
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <div className="app-container">
       <Header />
       <Balance />
+      <TransactionForm />
     </div>
   );
 }
