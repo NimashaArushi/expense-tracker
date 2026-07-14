@@ -4,15 +4,18 @@ import Balance from './components/Balance';
 import TransactionForm from './components/TransactionForm';
 import TransactionList from './components/TransactionList';
 import './App.css';
+import { GlobalProvider } from './context/GlobalState';
 
 function App() {
   return (
-    <div className="app-container">
-      <Header />
-      <Balance />
-      <TransactionForm />
-      <TransactionList />
-    </div>
+    <GlobalProvider>
+      <div className="app-container">
+        <Header />
+        <Balance />
+        <TransactionForm />
+        <TransactionList />
+      </div>
+    </GlobalProvider>
   );
 }
 
