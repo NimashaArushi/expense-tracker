@@ -1,9 +1,11 @@
-import React,{useState} from 'react';
+import React,{useState,useContext} from 'react';
+import { GlobalContext } from '../context/GlobalState';
 
-const TransactionForm = () => {
+  const TransactionForm = () => {
   const [text, setText] = useState('');
   const [amount, setAmount] = useState('');
   const [type, setType] = useState('income');
+  const { addTransaction } = useContext(GlobalContext);
 
   const onSubmit=(e)=>{
     e.preventDefault();
@@ -22,7 +24,7 @@ const TransactionForm = () => {
   }
 
 
-  console.log(newTransaction);
+  addTransaction(newTransaction);
   setText('');
     setAmount('');
   };
