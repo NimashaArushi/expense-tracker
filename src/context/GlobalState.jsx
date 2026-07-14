@@ -19,9 +19,14 @@ const addTransaction=(newTransaction)=>{
 
 };
 
-
+const deleteTransaction = (id) => {
+        setState({
+            ...state,
+            transactions: state.transactions.filter(transaction => transaction.id !== id)
+        });
+    };
     return(
-        <GlobalContext.Provider value={{transactions:state.transactions, addTransaction}}>
+        <GlobalContext.Provider value={{transactions:state.transactions, addTransaction,deleteTransaction}}>
             {children}
         </GlobalContext.Provider>
     );
