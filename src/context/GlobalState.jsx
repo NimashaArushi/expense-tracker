@@ -19,6 +19,13 @@ const addTransaction=(newTransaction)=>{
 
 };
 
+const resetTransactions=()=>{
+    setState({
+        ...state,
+        transactions:[]
+    });
+};
+
 const deleteTransaction = (id) => {
         setState({
             ...state,
@@ -26,7 +33,7 @@ const deleteTransaction = (id) => {
         });
     };
     return(
-        <GlobalContext.Provider value={{transactions:state.transactions, addTransaction,deleteTransaction}}>
+        <GlobalContext.Provider value={{transactions:state.transactions, addTransaction,deleteTransaction,resetTransactions}}>
             {children}
         </GlobalContext.Provider>
     );
