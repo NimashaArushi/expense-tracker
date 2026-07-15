@@ -1,7 +1,7 @@
-import React,{Children, createContext,useState}from 'react';
+import React,{Children, createContext,useState, useEffect}from 'react';
 
 const initialState={
-    transactions:[
+    transactions: JSON.parse(localStorage.getItem('transactions')) || [
     {id:1,text:'salary',amount:5000,type:'income'},
     {id:2,text:'Buy Shoes',amount:4500,type:'expense'},
     ]
@@ -10,6 +10,10 @@ const initialState={
 export const GlobalContext=createContext(initialState);
 export const GlobalProvider=({children})=>{
     const[state,setState]=useState(initialState);
+    
+useEffect(() => {
+        localStorage.setItem('transactions', JSON.stringify(state.transactions));
+    }, [state.transactions]);
 
 const addTransaction=(newTransaction)=>{
     setState({
